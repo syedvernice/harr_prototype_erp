@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6224579-1551-4F70-B9FD-155A4C850519}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>harr_prototype_erp</RootNamespace>
+    <AssemblyName>harr_prototype_erp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DMPSchoolDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DMPSchoolDataSet.xsc">
+      <DependentUpon>DMPSchoolDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet.xss">
+      <DependentUpon>DMPSchoolDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet1.xsc">
+      <DependentUpon>DMPSchoolDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet1.xss">
+      <DependentUpon>DMPSchoolDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet10.xsc">
+      <DependentUpon>DMPSchoolDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet10.xss">
+      <DependentUpon>DMPSchoolDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet11.xsc">
+      <DependentUpon>DMPSchoolDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet11.xss">
+      <DependentUpon>DMPSchoolDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet2.xsc">
+      <DependentUpon>DMPSchoolDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet2.xss">
+      <DependentUpon>DMPSchoolDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet3.xsc">
+      <DependentUpon>DMPSchoolDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet3.xss">
+      <DependentUpon>DMPSchoolDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet4.xsc">
+      <DependentUpon>DMPSchoolDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet4.xss">
+      <DependentUpon>DMPSchoolDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet5.xsc">
+      <DependentUpon>DMPSchoolDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet5.xss">
+      <DependentUpon>DMPSchoolDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet6.xsc">
+      <DependentUpon>DMPSchoolDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet6.xss">
+      <DependentUpon>DMPSchoolDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet7.xsc">
+      <DependentUpon>DMPSchoolDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet7.xss">
+      <DependentUpon>DMPSchoolDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet8.xsc">
+      <DependentUpon>DMPSchoolDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet8.xss">
+      <DependentUpon>DMPSchoolDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet9.xsc">
+      <DependentUpon>DMPSchoolDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet9.xss">
+      <DependentUpon>DMPSchoolDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
