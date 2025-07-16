@@ -37,8 +37,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.b_update = new System.Windows.Forms.Button();
+            this.b_edit = new System.Windows.Forms.Button();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dMPSchoolDataSet2 = new harr_prototype_erp.DMPSchoolDataSet2();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,14 +67,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.english = new System.Windows.Forms.TextBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.p_blue = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboyear = new System.Windows.Forms.ComboBox();
             this.datagrid_student = new System.Windows.Forms.DataGridView();
-            this.dMPSchoolDataSet9 = new harr_prototype_erp.DMPSchoolDataSet9();
-            this.year2022BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.year2022TableAdapter = new harr_prototype_erp.DMPSchoolDataSet9TableAdapters.Year2022TableAdapter();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mathematicsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,11 +80,14 @@
             this.computerScienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.englishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.year2024BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dMPSchoolDataSet11 = new harr_prototype_erp.DMPSchoolDataSet11();
+            this.dMPSchoolDataSet9 = new harr_prototype_erp.DMPSchoolDataSet9();
+            this.year2022BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.year2022TableAdapter = new harr_prototype_erp.DMPSchoolDataSet9TableAdapters.Year2022TableAdapter();
             this.dMPSchoolDataSet10 = new harr_prototype_erp.DMPSchoolDataSet10();
             this.year2023BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.year2023TableAdapter = new harr_prototype_erp.DMPSchoolDataSet10TableAdapters.Year2023TableAdapter();
-            this.dMPSchoolDataSet11 = new harr_prototype_erp.DMPSchoolDataSet11();
-            this.year2024BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.year2024TableAdapter = new harr_prototype_erp.DMPSchoolDataSet11TableAdapters.Year2024TableAdapter();
             this.label6 = new System.Windows.Forms.Label();
             this.urdu = new System.Windows.Forms.TextBox();
@@ -105,14 +105,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p_blue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_student)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.year2024BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.year2022BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.year2023BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.year2024BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -201,29 +201,29 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "HARR";
             // 
-            // button9
+            // b_update
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(179)))), ((int)(((byte)(164)))));
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(1263, 881);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(142, 37);
-            this.button9.TabIndex = 34;
-            this.button9.Text = "Update";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.b_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(179)))), ((int)(((byte)(164)))));
+            this.b_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_update.Location = new System.Drawing.Point(1263, 881);
+            this.b_update.Name = "b_update";
+            this.b_update.Size = new System.Drawing.Size(142, 37);
+            this.b_update.TabIndex = 34;
+            this.b_update.Text = "Update";
+            this.b_update.UseVisualStyleBackColor = false;
+            this.b_update.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button7
+            // b_edit
             // 
-            this.button7.BackColor = System.Drawing.Color.SkyBlue;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(465, 881);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 37);
-            this.button7.TabIndex = 32;
-            this.button7.Text = "Edit";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.b_edit.BackColor = System.Drawing.Color.SkyBlue;
+            this.b_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_edit.Location = new System.Drawing.Point(465, 881);
+            this.b_edit.Name = "b_edit";
+            this.b_edit.Size = new System.Drawing.Size(125, 37);
+            this.b_edit.TabIndex = 32;
+            this.b_edit.Text = "Edit";
+            this.b_edit.UseVisualStyleBackColor = false;
+            this.b_edit.Click += new System.EventHandler(this.button7_Click);
             // 
             // studentsBindingSource
             // 
@@ -364,7 +364,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.pictureBox6.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(1918, 64);
             this.pictureBox6.TabIndex = 63;
@@ -482,14 +482,14 @@
             this.english.Size = new System.Drawing.Size(221, 38);
             this.english.TabIndex = 76;
             // 
-            // pictureBox12
+            // p_blue
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
-            this.pictureBox12.Location = new System.Drawing.Point(1066, 298);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(539, 564);
-            this.pictureBox12.TabIndex = 68;
-            this.pictureBox12.TabStop = false;
+            this.p_blue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
+            this.p_blue.Location = new System.Drawing.Point(1066, 298);
+            this.p_blue.Name = "p_blue";
+            this.p_blue.Size = new System.Drawing.Size(539, 564);
+            this.p_blue.TabIndex = 68;
+            this.p_blue.TabStop = false;
             // 
             // label4
             // 
@@ -528,6 +528,7 @@
             this.comboyear.Size = new System.Drawing.Size(121, 33);
             this.comboyear.TabIndex = 79;
             this.comboyear.Text = "Year";
+            this.comboyear.SelectedIndexChanged += new System.EventHandler(this.comboyear_SelectedIndexChanged_1);
             // 
             // datagrid_student
             // 
@@ -543,24 +544,11 @@
             this.englishDataGridViewTextBoxColumn,
             this.urduDataGridViewTextBoxColumn});
             this.datagrid_student.DataSource = this.year2024BindingSource;
-            this.datagrid_student.Location = new System.Drawing.Point(138, 316);
+            this.datagrid_student.Location = new System.Drawing.Point(126, 327);
             this.datagrid_student.Name = "datagrid_student";
             this.datagrid_student.Size = new System.Drawing.Size(845, 524);
             this.datagrid_student.TabIndex = 80;
-            // 
-            // dMPSchoolDataSet9
-            // 
-            this.dMPSchoolDataSet9.DataSetName = "DMPSchoolDataSet9";
-            this.dMPSchoolDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // year2022BindingSource
-            // 
-            this.year2022BindingSource.DataMember = "Year2022";
-            this.year2022BindingSource.DataSource = this.dMPSchoolDataSet9;
-            // 
-            // year2022TableAdapter
-            // 
-            this.year2022TableAdapter.ClearBeforeFill = true;
+            this.datagrid_student.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_student_CellContentClick);
             // 
             // studentIDDataGridViewTextBoxColumn
             // 
@@ -610,6 +598,30 @@
             this.urduDataGridViewTextBoxColumn.HeaderText = "Urdu";
             this.urduDataGridViewTextBoxColumn.Name = "urduDataGridViewTextBoxColumn";
             // 
+            // year2024BindingSource
+            // 
+            this.year2024BindingSource.DataMember = "Year2024";
+            this.year2024BindingSource.DataSource = this.dMPSchoolDataSet11;
+            // 
+            // dMPSchoolDataSet11
+            // 
+            this.dMPSchoolDataSet11.DataSetName = "DMPSchoolDataSet11";
+            this.dMPSchoolDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dMPSchoolDataSet9
+            // 
+            this.dMPSchoolDataSet9.DataSetName = "DMPSchoolDataSet9";
+            this.dMPSchoolDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // year2022BindingSource
+            // 
+            this.year2022BindingSource.DataMember = "Year2022";
+            this.year2022BindingSource.DataSource = this.dMPSchoolDataSet9;
+            // 
+            // year2022TableAdapter
+            // 
+            this.year2022TableAdapter.ClearBeforeFill = true;
+            // 
             // dMPSchoolDataSet10
             // 
             this.dMPSchoolDataSet10.DataSetName = "DMPSchoolDataSet10";
@@ -623,16 +635,6 @@
             // year2023TableAdapter
             // 
             this.year2023TableAdapter.ClearBeforeFill = true;
-            // 
-            // dMPSchoolDataSet11
-            // 
-            this.dMPSchoolDataSet11.DataSetName = "DMPSchoolDataSet11";
-            this.dMPSchoolDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // year2024BindingSource
-            // 
-            this.year2024BindingSource.DataMember = "Year2024";
-            this.year2024BindingSource.DataSource = this.dMPSchoolDataSet11;
             // 
             // year2024TableAdapter
             // 
@@ -704,7 +706,7 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox12);
+            this.Controls.Add(this.p_blue);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.searchbox);
@@ -721,8 +723,8 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.b_update);
+            this.Controls.Add(this.b_edit);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox10);
@@ -741,14 +743,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p_blue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_student)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.year2024BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.year2022BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.year2023BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.year2024BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,8 +764,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button b_update;
+        private System.Windows.Forms.Button b_edit;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox computer;
         private System.Windows.Forms.TextBox sst;
@@ -792,7 +794,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.TextBox english;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox p_blue;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboyear;

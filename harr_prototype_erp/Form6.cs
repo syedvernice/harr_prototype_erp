@@ -24,8 +24,10 @@ namespace harr_prototype_erp
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dMPSchoolDataSet13.students' table. You can move, or remove it, as needed.
+            this.studentsTableAdapter1.Fill(this.dMPSchoolDataSet13.students);
             // TODO: This line of code loads data into the 'dMPSchoolDataSet3.students' table. You can move, or remove it, as needed.
-            this.studentsTableAdapter.Fill(this.dMPSchoolDataSet3.students);
+            //this.studentsTableAdapter.Fill(this.dMPSchoolDataSet3.students);
 
         }
 
@@ -38,7 +40,12 @@ namespace harr_prototype_erp
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (s_name.Text == "" || s_age.Text == "" || s_class.SelectedItem == null  || s_gender.Text == "" ||  s_section.Text == "")
+            // TODO: This line of code loads data into the 'dMPSchoolDataSet13.students' table. You can move, or remove it, as needed.
+            this.studentsTableAdapter1.Fill(this.dMPSchoolDataSet13.students);
+            // TODO: This line of code loads data into the 'dMPSchoolDataSet3.students' table. You can move, or remove it, as needed.
+            //this.studentsTableAdapter.Fill(this.dMPSchoolDataSet3.students);
+
+            if (s_name.Text == "" || s_age.Text == "" || s_gender.Text == "" || sgrade.SelectedItem==null)
             {
                 MessageBox.Show("Please Enter all the credentials");
             }
@@ -47,7 +54,7 @@ namespace harr_prototype_erp
 
             else
             {
-                string query = "insert into students values(@name,@age,@grade_level,@gender,@section)";
+                string query = "insert into students values(@name,@age,@gender,@Grade_Level)";
                 using (SqlConnection conn = new SqlConnection(connection))
                 {
 
@@ -56,10 +63,10 @@ namespace harr_prototype_erp
                         
                         cmd.Parameters.AddWithValue("@name", s_name.Text);
                         cmd.Parameters.AddWithValue("@age", s_age.Text);
-                        cmd.Parameters.AddWithValue("@grade_level", s_class.SelectedItem);
                         cmd.Parameters.AddWithValue("@gender", s_gender.Text);
-                        
-                        cmd.Parameters.AddWithValue("@section", s_section.Text);
+                        cmd.Parameters.AddWithValue("@Grade_Level", sgrade.SelectedItem);
+
+
 
                         conn.Open();
                         cmd.ExecuteNonQuery();
@@ -76,10 +83,9 @@ namespace harr_prototype_erp
             
             s_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             s_age.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            s_class.SelectedValue = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             s_gender.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             
-            s_section.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -120,7 +126,7 @@ namespace harr_prototype_erp
 
         private void update_button_Click(object sender, EventArgs e)
         {
-            if (s_name.Text == "" || s_age.Text == "" || s_class.SelectedItem == null || s_gender.Text == ""  || s_section.Text == "")
+            if (s_name.Text == "" || s_age.Text == "" ||s_gender.Text == "" || sgrade.SelectedItem == null)
             {
                 MessageBox.Show("Please Enter all the credentials");
             }
@@ -130,20 +136,18 @@ namespace harr_prototype_erp
 
 
 
-                string query = "update students set name=@name,age=@age,grade_level=@grade_level,gender=@gender,section=@section where id=@id";
+                string query = "update students set name=@name,age=@age,Grade_level=@Grade_Level,gender=@gender,section=@section where id=@id";
                 SqlConnection conn = new SqlConnection(connection);
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 
                 cmd.Parameters.AddWithValue("@name", s_name.Text);
                 cmd.Parameters.AddWithValue("@age", s_age.Text);
-                cmd.Parameters.AddWithValue("@grade_level", s_class.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@gender", s_gender.Text);
-                
-                cmd.Parameters.AddWithValue("@section", s_section.Text);
+                cmd.Parameters.AddWithValue("@Grade_Level", s_gender.Text);
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Teacher Edited Successfully! ");
+                MessageBox.Show("Student Edited Successfully! ");
                 conn.Close();
                 button9.PerformClick();
             }
@@ -159,6 +163,7 @@ namespace harr_prototype_erp
                 {
                     row.Selected = true;
                     return;
+                    button9.PerformClick();
                 }
             }
 
@@ -186,8 +191,55 @@ namespace harr_prototype_erp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            Form7 form7 = new Form7();
+            form7.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form6 f6= new Form6();
+            f6.Show();
+        }
+
+        private void s_class_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // string selectedClass = comboBox1.SelectedItem.ToString();
+            // SqlConnection con = new SqlConnection(@"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            // {
+            // con.Open();
+            //string query = "SELECT Student_ID, Name, Age, Gender, Grade_Level FROM Students WHERE Grade_Level = @Class";
+            //SqlCommand cmd = new SqlCommand(query, con);
+            //cmd.Parameters.AddWithValue("@Class", selectedClass);
+
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+
+            //dataGridView1.DataSource = dt;
+            //}
+
+            // con.Close();
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

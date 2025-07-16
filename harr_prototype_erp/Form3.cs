@@ -136,7 +136,9 @@ namespace harr_prototype_erp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Form7 f7 = new Form7();
+            f7.Show();
+            this.Hide();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -182,6 +184,7 @@ namespace harr_prototype_erp
                 {
                     row.Selected = true;
                     return;
+                    button3.PerformClick();
                 }
             }
 
@@ -257,6 +260,38 @@ namespace harr_prototype_erp
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             datagrid_student.DataSource = dt;
+        }
+
+        private void comboyear_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboyear.SelectedItem != "2024"){
+                b_edit.Enabled = false;
+                b_update.Enabled = false;
+                p_blue.Enabled = false;
+                maths.Enabled = false;
+                english.Enabled = false;
+                sst.Enabled = false;
+                computer.Enabled = false;
+                urdu.Enabled = false;
+                science.Enabled = false;
+            }
+            else
+            {
+                b_edit.Enabled = true;
+                b_update.Enabled = true;
+                p_blue.Enabled = true;
+                maths.Enabled = true;
+                english.Enabled = true;
+                sst.Enabled = true;
+                computer.Enabled = true;
+                urdu.Enabled = true;
+                science.Enabled = true;
+            }
+        }
+
+        private void datagrid_student_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

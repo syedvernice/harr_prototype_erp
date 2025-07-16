@@ -20,11 +20,8 @@ namespace harr_prototype_erp
         }
 
         private void Form2_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet.teachers' table. You can move, or remove it, as needed.
-            this.teachersTableAdapter.Fill(this.dMPSchoolDataSet.teachers);
-
-
+        {// TODO: This line of code loads data into the 'dMPSchoolDataSet16.teachers' table. You can move, or remove it, as needed.
+            this.teachersTableAdapter2.Fill(this.dMPSchoolDataSet16.teachers);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -40,7 +37,15 @@ namespace harr_prototype_erp
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (t_password.Text == "" ||t_class.SelectedItem==null||t_email.Text == "" || t_name.Text=="" || t_phone.Text=="" || t_section.Text=="")
+
+            // TODO: This line of code loads data into the 'dMPSchoolDataSet12.teachers' table. You can move, or remove it, as needed.
+            this.teachersTableAdapter1.Fill(this.dMPSchoolDataSet12.teachers);
+            // TODO: This line of code loads data into the 'dMPSchoolDataSet.teachers' table. You can move, or remove it, as needed.
+            //this.teachersTableAdapter.Fill(this.dMPSchoolDataSet.teachers);
+
+
+            
+            if (t_password.Text == "" ||t_class.SelectedItem==null||t_email.Text == "" || t_name.Text=="" || t_phone.Text=="")
             {
                 MessageBox.Show("Please Enter all the credentials");
             }
@@ -48,7 +53,7 @@ namespace harr_prototype_erp
 
 
             else {
-                        string query = "insert into teachers values(@password,@name,@class,@email,@phone,@section)";
+                        string query = "insert into teachers values(@password,@name,@class,@email,@phone)";
                         using (SqlConnection conn = new SqlConnection(connection))
                         {
 
@@ -59,8 +64,6 @@ namespace harr_prototype_erp
                                 cmd.Parameters.AddWithValue("@class", t_class.SelectedItem);
                                 cmd.Parameters.AddWithValue("@email", t_email.Text);
                                 cmd.Parameters.AddWithValue("@phone", t_phone.Text);
-                                cmd.Parameters.AddWithValue("@section", t_section.Text);
-
                                 conn.Open();
                                 cmd.ExecuteNonQuery();
                                 MessageBox.Show("Teacher Added Successfully! ");
@@ -85,7 +88,7 @@ namespace harr_prototype_erp
 
         private void update_button_Click(object sender, EventArgs e)
         {
-            if (t_password.Text == "" || t_class.SelectedItem.ToString() == null || t_email.Text == "" || t_name.Text == "" || t_phone.Text == "" || t_section.Text == "")
+            if (t_password.Text == "" || t_class.SelectedItem.ToString() == null || t_email.Text == "" || t_name.Text == "" || t_phone.Text == "")
             {
                 MessageBox.Show("Please Enter all the credentials");
             }
@@ -95,7 +98,7 @@ namespace harr_prototype_erp
 
 
 
-                string query = "update teachers set teacher_password=@password,teacher_name=@name,teacher_class=@class,teacher_email=@email,teacher_phone=@phone,teacher_section=@section where teacher_id=@id";
+                string query = "update teachers set teacher_password=@password,teacher_name=@name,teacher_class=@class,teacher_email=@email,teacher_phone=@phone where teacher_id=@id";
                 SqlConnection conn = new SqlConnection(connection);
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value.ToString());
@@ -104,7 +107,6 @@ namespace harr_prototype_erp
                 cmd.Parameters.AddWithValue("@class", t_class.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@email", t_email.Text);
                 cmd.Parameters.AddWithValue("@phone", t_phone.Text);
-                cmd.Parameters.AddWithValue("@section", t_section.Text);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Teacher Edited Successfully! ");
@@ -118,10 +120,9 @@ namespace harr_prototype_erp
 
             t_password.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             t_name.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            t_class.SelectedValue = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            t_class.SelectedItem = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             t_email.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             t_phone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            t_section.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
         private void button8_Click(object sender, EventArgs e)
         {
@@ -206,7 +207,10 @@ namespace harr_prototype_erp
                 {
                     row.Selected = true;
                     return;
+                    
+
                 }
+                button9.PerformClick();
             }
 
             MessageBox.Show("Teacher not found.");
@@ -221,6 +225,17 @@ namespace harr_prototype_erp
         {
             Form6 form6 = new Form6();  
             form6.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form7 form7 = new Form7();
+            form7.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

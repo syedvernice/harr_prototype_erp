@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,6 +66,31 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DMPSchoolDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet16.xsd</DependentUpon>
     </Compile>
     <Compile Include="DMPSchoolDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -142,6 +168,18 @@
     <Compile Include="Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8.Designer.cs">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -162,6 +200,12 @@
     <EmbeddedResource Include="Form6.resx">
       <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -170,6 +214,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DMPSchoolDataSet.xsc">
       <DependentUpon>DMPSchoolDataSet.xsd</DependentUpon>
@@ -214,6 +259,61 @@
     </None>
     <None Include="DMPSchoolDataSet11.xss">
       <DependentUpon>DMPSchoolDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet12.xsc">
+      <DependentUpon>DMPSchoolDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet12.xss">
+      <DependentUpon>DMPSchoolDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet13.xsc">
+      <DependentUpon>DMPSchoolDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet13.xss">
+      <DependentUpon>DMPSchoolDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet14.xsc">
+      <DependentUpon>DMPSchoolDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet14.xss">
+      <DependentUpon>DMPSchoolDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet15.xsc">
+      <DependentUpon>DMPSchoolDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet15.xss">
+      <DependentUpon>DMPSchoolDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet16.xsc">
+      <DependentUpon>DMPSchoolDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet16.xss">
+      <DependentUpon>DMPSchoolDataSet16.xsd</DependentUpon>
     </None>
     <None Include="DMPSchoolDataSet2.xsc">
       <DependentUpon>DMPSchoolDataSet2.xsd</DependentUpon>
@@ -315,6 +415,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\37a084cdd35c798bc543aff7a6393fab.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\std1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MANAGING PROGRESS. RECOMMENDING POTENTIAL %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
