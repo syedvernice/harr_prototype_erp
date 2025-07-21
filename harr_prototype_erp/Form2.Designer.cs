@@ -60,6 +60,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.teacheridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherpasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teachernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherclassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacheremailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teachersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dMPSchoolDataSet16 = new harr_prototype_erp.DMPSchoolDataSet16();
             this.teachersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dMPSchoolDataSet12 = new harr_prototype_erp.DMPSchoolDataSet12();
             this.label13 = new System.Windows.Forms.Label();
@@ -77,18 +85,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.teachersTableAdapter1 = new harr_prototype_erp.DMPSchoolDataSet12TableAdapters.teachersTableAdapter();
-            this.teacheridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherpasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teachernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherclassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacheremailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dMPSchoolDataSet16 = new harr_prototype_erp.DMPSchoolDataSet16();
-            this.teachersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.teachersTableAdapter2 = new harr_prototype_erp.DMPSchoolDataSet16TableAdapters.teachersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.teachersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teachersBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teachersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -101,8 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teachersBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -383,7 +383,11 @@
             "8",
             "7",
             "6",
-            "5"});
+            "5",
+            "4",
+            "3",
+            "2",
+            "1"});
             this.t_class.Location = new System.Drawing.Point(1305, 521);
             this.t_class.Name = "t_class";
             this.t_class.Size = new System.Drawing.Size(121, 37);
@@ -434,6 +438,53 @@
             this.dataGridView1.Size = new System.Drawing.Size(741, 463);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // teacheridDataGridViewTextBoxColumn
+            // 
+            this.teacheridDataGridViewTextBoxColumn.DataPropertyName = "teacher_id";
+            this.teacheridDataGridViewTextBoxColumn.HeaderText = "teacher_id";
+            this.teacheridDataGridViewTextBoxColumn.Name = "teacheridDataGridViewTextBoxColumn";
+            this.teacheridDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // teacherpasswordDataGridViewTextBoxColumn
+            // 
+            this.teacherpasswordDataGridViewTextBoxColumn.DataPropertyName = "teacher_password";
+            this.teacherpasswordDataGridViewTextBoxColumn.HeaderText = "teacher_password";
+            this.teacherpasswordDataGridViewTextBoxColumn.Name = "teacherpasswordDataGridViewTextBoxColumn";
+            // 
+            // teachernameDataGridViewTextBoxColumn
+            // 
+            this.teachernameDataGridViewTextBoxColumn.DataPropertyName = "teacher_name";
+            this.teachernameDataGridViewTextBoxColumn.HeaderText = "teacher_name";
+            this.teachernameDataGridViewTextBoxColumn.Name = "teachernameDataGridViewTextBoxColumn";
+            // 
+            // teacherclassDataGridViewTextBoxColumn
+            // 
+            this.teacherclassDataGridViewTextBoxColumn.DataPropertyName = "teacher_class";
+            this.teacherclassDataGridViewTextBoxColumn.HeaderText = "teacher_class";
+            this.teacherclassDataGridViewTextBoxColumn.Name = "teacherclassDataGridViewTextBoxColumn";
+            // 
+            // teacheremailDataGridViewTextBoxColumn
+            // 
+            this.teacheremailDataGridViewTextBoxColumn.DataPropertyName = "teacher_email";
+            this.teacheremailDataGridViewTextBoxColumn.HeaderText = "teacher_email";
+            this.teacheremailDataGridViewTextBoxColumn.Name = "teacheremailDataGridViewTextBoxColumn";
+            // 
+            // teacherphoneDataGridViewTextBoxColumn
+            // 
+            this.teacherphoneDataGridViewTextBoxColumn.DataPropertyName = "teacher_phone";
+            this.teacherphoneDataGridViewTextBoxColumn.HeaderText = "teacher_phone";
+            this.teacherphoneDataGridViewTextBoxColumn.Name = "teacherphoneDataGridViewTextBoxColumn";
+            // 
+            // teachersBindingSource2
+            // 
+            this.teachersBindingSource2.DataMember = "teachers";
+            this.teachersBindingSource2.DataSource = this.dMPSchoolDataSet16;
+            // 
+            // dMPSchoolDataSet16
+            // 
+            this.dMPSchoolDataSet16.DataSetName = "DMPSchoolDataSet16";
+            this.dMPSchoolDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // teachersBindingSource1
             // 
@@ -579,53 +630,6 @@
             // 
             this.teachersTableAdapter1.ClearBeforeFill = true;
             // 
-            // teacheridDataGridViewTextBoxColumn
-            // 
-            this.teacheridDataGridViewTextBoxColumn.DataPropertyName = "teacher_id";
-            this.teacheridDataGridViewTextBoxColumn.HeaderText = "teacher_id";
-            this.teacheridDataGridViewTextBoxColumn.Name = "teacheridDataGridViewTextBoxColumn";
-            this.teacheridDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // teacherpasswordDataGridViewTextBoxColumn
-            // 
-            this.teacherpasswordDataGridViewTextBoxColumn.DataPropertyName = "teacher_password";
-            this.teacherpasswordDataGridViewTextBoxColumn.HeaderText = "teacher_password";
-            this.teacherpasswordDataGridViewTextBoxColumn.Name = "teacherpasswordDataGridViewTextBoxColumn";
-            // 
-            // teachernameDataGridViewTextBoxColumn
-            // 
-            this.teachernameDataGridViewTextBoxColumn.DataPropertyName = "teacher_name";
-            this.teachernameDataGridViewTextBoxColumn.HeaderText = "teacher_name";
-            this.teachernameDataGridViewTextBoxColumn.Name = "teachernameDataGridViewTextBoxColumn";
-            // 
-            // teacherclassDataGridViewTextBoxColumn
-            // 
-            this.teacherclassDataGridViewTextBoxColumn.DataPropertyName = "teacher_class";
-            this.teacherclassDataGridViewTextBoxColumn.HeaderText = "teacher_class";
-            this.teacherclassDataGridViewTextBoxColumn.Name = "teacherclassDataGridViewTextBoxColumn";
-            // 
-            // teacheremailDataGridViewTextBoxColumn
-            // 
-            this.teacheremailDataGridViewTextBoxColumn.DataPropertyName = "teacher_email";
-            this.teacheremailDataGridViewTextBoxColumn.HeaderText = "teacher_email";
-            this.teacheremailDataGridViewTextBoxColumn.Name = "teacheremailDataGridViewTextBoxColumn";
-            // 
-            // teacherphoneDataGridViewTextBoxColumn
-            // 
-            this.teacherphoneDataGridViewTextBoxColumn.DataPropertyName = "teacher_phone";
-            this.teacherphoneDataGridViewTextBoxColumn.HeaderText = "teacher_phone";
-            this.teacherphoneDataGridViewTextBoxColumn.Name = "teacherphoneDataGridViewTextBoxColumn";
-            // 
-            // dMPSchoolDataSet16
-            // 
-            this.dMPSchoolDataSet16.DataSetName = "DMPSchoolDataSet16";
-            this.dMPSchoolDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // teachersBindingSource2
-            // 
-            this.teachersBindingSource2.DataMember = "teachers";
-            this.teachersBindingSource2.DataSource = this.dMPSchoolDataSet16;
-            // 
             // teachersTableAdapter2
             // 
             this.teachersTableAdapter2.ClearBeforeFill = true;
@@ -681,6 +685,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.teachersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teachersBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teachersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -693,8 +699,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teachersBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

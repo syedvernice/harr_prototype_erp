@@ -34,7 +34,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.b_update = new System.Windows.Forms.Button();
@@ -164,20 +163,6 @@
             this.button6.Text = "Logout";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(88)))), ((int)(((byte)(115)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(215)))), ((int)(((byte)(218)))));
-            this.button5.Location = new System.Drawing.Point(1148, 118);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(163, 48);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Profile";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pictureBox2
             // 
@@ -662,7 +647,7 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(1257, 383);
+            this.name.Location = new System.Drawing.Point(1267, 383);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(22, 31);
             this.name.TabIndex = 83;
@@ -716,7 +701,6 @@
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
@@ -761,7 +745,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button b_update;

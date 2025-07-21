@@ -112,14 +112,14 @@ namespace harr_prototype_erp
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet11.Year2024' table. You can move, or remove it, as needed.
+            this.dMPSchoolDataSet11.EnforceConstraints = false;
             this.year2024TableAdapter.Fill(this.dMPSchoolDataSet11.Year2024);
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet10.Year2023' table. You can move, or remove it, as needed.
+
+            this.dMPSchoolDataSet10.EnforceConstraints = false;
             this.year2023TableAdapter.Fill(this.dMPSchoolDataSet10.Year2023);
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet9.Year2022' table. You can move, or remove it, as needed.
+
+            this.dMPSchoolDataSet9.EnforceConstraints = false;
             this.year2022TableAdapter.Fill(this.dMPSchoolDataSet9.Year2022);
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet2.students' table. You can move, or remove it, as needed.
-            //this.studentsTableAdapter.Fill(this.dMPSchoolDataSet2.students);
 
             comboyear.SelectedIndexChanged += ComboYear_SelectedIndexChanged;
             comboyear.SelectedItem = "2024";
@@ -136,8 +136,8 @@ namespace harr_prototype_erp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form7 f7 = new Form7();
-            f7.Show();
+            Form8 f8 = new Form8();
+            f8.Show();
             this.Hide();
         }
 

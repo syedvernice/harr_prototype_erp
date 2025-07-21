@@ -72,5 +72,15 @@ namespace harr_prototype_erp
         {
 
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form7_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

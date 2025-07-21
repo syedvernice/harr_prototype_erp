@@ -92,16 +92,10 @@ namespace harr_prototype_erp
                             SqlDataReader reader = cmd.ExecuteReader();
                             if (reader.HasRows)
                             {
-                                Form8 f8 = new Form8();
+                                Form8 f8 = new Form8(user);
                                 f8.Show();
                                 this.Hide();
-                               // SqlDataReader reader = cmd.ExecuteReader();
-
-                                //string query1 ="Select  teacher_name=@name,teacher_class=@class,teacher_email=@mail,teacher_phone=@phone where teacher_d=@id"
-                                //l_name.Text = reader["teacher_name"].ToString();
-                                //l_class.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                                //l_mail.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                                //l_phone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                               
                             }
                             else
                             {

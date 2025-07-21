@@ -123,6 +123,7 @@ namespace harr_prototype_erp
             t_class.SelectedItem = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             t_email.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             t_phone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            
         }
         private void button8_Click(object sender, EventArgs e)
         {
@@ -234,6 +235,11 @@ namespace harr_prototype_erp
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
