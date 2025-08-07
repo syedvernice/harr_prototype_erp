@@ -8,20 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace harr_prototype_erp
 {
     public partial class Form2 : Form
     {
-        string connection = @"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string connection = @"Data Source=LAPTOP-PLH51RCN\SQLEXPRESS;Initial Catalog=Harr_project;Integrated Security=True;TrustServerCertificate=True;";
+
         public Form2()
         {
             InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
-        {// TODO: This line of code loads data into the 'dMPSchoolDataSet16.teachers' table. You can move, or remove it, as needed.
-            this.teachersTableAdapter2.Fill(this.dMPSchoolDataSet16.teachers);
+        {
+           // this.teachersTableAdapter2.Fill(this.dMPSchoolDataSet16.teachers);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace harr_prototype_erp
         {
 
             // TODO: This line of code loads data into the 'dMPSchoolDataSet12.teachers' table. You can move, or remove it, as needed.
-            this.teachersTableAdapter1.Fill(this.dMPSchoolDataSet12.teachers);
+            //this.teachersTableAdapter1.Fill(this.dMPSchoolDataSet12.teachers);
             // TODO: This line of code loads data into the 'dMPSchoolDataSet.teachers' table. You can move, or remove it, as needed.
             //this.teachersTableAdapter.Fill(this.dMPSchoolDataSet.teachers);
 
@@ -72,7 +74,7 @@ namespace harr_prototype_erp
                             }
                         }
               }
-            
+            ClearInputs();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -113,6 +115,7 @@ namespace harr_prototype_erp
                 conn.Close();
                 button9.PerformClick();
             }
+            ClearInputs();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -150,7 +153,7 @@ namespace harr_prototype_erp
                 MessageBox.Show("Deletion cancelled.");
             }
 
-
+            ClearInputs();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -242,6 +245,17 @@ namespace harr_prototype_erp
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+        private void ClearInputs()
+        {
+            t_password.Text = "";
+            t_name.Text = "";
+            t_email.Text = "";
+            t_phone.Text = "";
+            t_class.SelectedItem = null;
+            searchbox.Text = "";
+            dataGridView1.ClearSelection();
+            t_password.Focus();
         }
     }
 }

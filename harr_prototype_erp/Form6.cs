@@ -15,7 +15,8 @@ namespace harr_prototype_erp
 {
     public partial class Form6 : Form
     {
-        string connection = @"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string connection = @"Data Source=LAPTOP-PLH51RCN\SQLEXPRESS;Initial Catalog=Harr_project;Integrated Security=True;TrustServerCertificate=True;";
+
 
         public Form6()
         {
@@ -24,10 +25,7 @@ namespace harr_prototype_erp
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet13.students' table. You can move, or remove it, as needed.
-            this.studentsTableAdapter1.Fill(this.dMPSchoolDataSet13.students);
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet3.students' table. You can move, or remove it, as needed.
-            //this.studentsTableAdapter.Fill(this.dMPSchoolDataSet3.students);
+            
 
         }
 
@@ -40,51 +38,63 @@ namespace harr_prototype_erp
 
         private void button10_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet13.students' table. You can move, or remove it, as needed.
-            this.studentsTableAdapter1.Fill(this.dMPSchoolDataSet13.students);
-            // TODO: This line of code loads data into the 'dMPSchoolDataSet3.students' table. You can move, or remove it, as needed.
-            //this.studentsTableAdapter.Fill(this.dMPSchoolDataSet3.students);
 
-            if (s_id.Text==""||s_name.Text == "" || s_age.Text == "" || s_gender.Text == "" || sgrade.SelectedItem==null)
+
+            if (s_id.Text == "" || s_name.Text == "" || s_age.Text == "" || s_gender.Text == "" ||
+        sgrade.SelectedItem == null || comboBox1.SelectedItem == null)
             {
-                MessageBox.Show("Please Enter all the credentials");
+                MessageBox.Show("Please enter all the credentials and select a class.");
+                return;
+            }
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a class.");
+                return;
             }
 
+            string selectedClass = comboBox1.SelectedItem.ToString().Trim(); // used for filtering / Grade_Level
+            string gradeLevel = sgrade.SelectedItem.ToString().Trim(); // stored in Students table
 
-
-            else
+            string connectionString = @"Data Source=LAPTOP-PLH51RCN\SQLEXPRESS;Initial Catalog=Harr_project;Integrated Security=True;TrustServerCertificate=True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "insert into students values(@id,@name,@age,@gender,@Grade_Level)";
-
-                using (SqlConnection conn = new SqlConnection(connection))
+                try
                 {
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@id", s_id.Text);
-                        cmd.Parameters.AddWithValue("@name", s_name.Text);
-                        cmd.Parameters.AddWithValue("@age", s_age.Text);
-                        cmd.Parameters.AddWithValue("@gender", s_gender.Text);
-                        cmd.Parameters.AddWithValue("@Grade_Level", sgrade.SelectedItem);
-
-
-
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Student Added Successfully! ");
-                        conn.Close();
-                        button9.PerformClick();
-                    }
-                    string insert2022 = "INSERT INTO Year2024 (Student_ID, Name) VALUES (@ID, @Name)";
-                    SqlCommand cmd2 = new SqlCommand(insert2022, conn);
-                    cmd2.Parameters.AddWithValue("@ID", s_id.Text);
-                    cmd2.Parameters.AddWithValue("@Name", s_name.Text);
                     conn.Open();
-                    cmd2.ExecuteNonQuery();
+
+                    // 1. Insert into overall Students table
+                    string insertOverall = @"
+                INSERT INTO Students (Student_ID, Name, Age, Gender, Grade_Level)
+                VALUES (@id, @name, @age, @gender, @grade)";
+                    using (SqlCommand cmd = new SqlCommand(insertOverall, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", s_id.Text.Trim());
+                        cmd.Parameters.AddWithValue("@name", s_name.Text.Trim());
+                        cmd.Parameters.AddWithValue("@age", s_age.Text.Trim());
+                        cmd.Parameters.AddWithValue("@gender", s_gender.Text.Trim());
+                        cmd.Parameters.AddWithValue("@grade", gradeLevel);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // 2. Always insert into Year2024 (only ID and Name)
+                    string insertYear2024 = "INSERT INTO Year2024 (Student_ID, Name) VALUES (@id, @name)";
+                    using (SqlCommand cmd2 = new SqlCommand(insertYear2024, conn))
+                    {
+                        cmd2.Parameters.AddWithValue("@id", s_id.Text.Trim());
+                        cmd2.Parameters.AddWithValue("@name", s_name.Text.Trim());
+                        cmd2.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Student added successfully!");
+                    RefreshCurrentClass();
+                    ClearInputs();
+
 
                 }
-                
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error adding student: " + ex.Message);
+                }
             }
         }
 
@@ -106,11 +116,12 @@ namespace harr_prototype_erp
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dataGridView1.DataSource = dt;
+
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM students WHERE id = @id";
+            string query = "DELETE FROM students WHERE Student_ID = @id";
 
             if (MessageBox.Show("Are you sure you want to delete this student?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
@@ -132,6 +143,10 @@ namespace harr_prototype_erp
             {
                 MessageBox.Show("Deletion cancelled.");
             }
+            RefreshCurrentClass();
+            ClearInputs();
+
+
         }
 
         private void update_button_Click(object sender, EventArgs e)
@@ -156,15 +171,35 @@ namespace harr_prototype_erp
                 cmd.Parameters.AddWithValue("@gender", s_gender.Text);
                 cmd.Parameters.AddWithValue("@Grade_Level", sgrade.SelectedItem);
 
-                
-               
+                if (comboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a class.");
+                    return;
+                }
+
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Student Edited Successfully! ");
                 conn.Close();
                 button9.PerformClick();
+
+                string filterQuery = "SELECT Student_ID, Name, Age, Gender, Grade_Level FROM Students WHERE Grade_Level = @Class";
+                using (SqlCommand cmd3 = new SqlCommand(filterQuery, conn))
+                {
+                    string selectedClass = comboBox1.SelectedItem.ToString().Trim();
+                    cmd3.Parameters.AddWithValue("@Class", selectedClass);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd3))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+
             }
+            RefreshCurrentClass();
+            ClearInputs();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -222,22 +257,24 @@ namespace harr_prototype_erp
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedClass = comboBox1.SelectedItem.ToString();
-            SqlConnection con = new SqlConnection(@"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            if (comboBox1.SelectedItem == null) return;
+
+            string selectedClass = comboBox1.SelectedItem.ToString().Trim();
+            using (SqlConnection con = new SqlConnection(connection))
             {
-             con.Open();
-            string query = "SELECT Student_ID, Name, Age, Gender, Grade_Level FROM Students WHERE Grade_Level = @Class";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@Class", selectedClass);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            dataGridView1.DataSource = dt;
+                con.Open();
+                string query = "SELECT Student_ID, Name, Age, Gender, Grade_Level FROM Students WHERE Grade_Level = @Class";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Class", selectedClass);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                    }
+                }
             }
-
-             con.Close();
 
         }
 
@@ -272,12 +309,44 @@ namespace harr_prototype_erp
                 button9.PerformClick();
             }
 
-            MessageBox.Show("Teacher not found.");
+            MessageBox.Show("Student not found.");
         }
 
         private void sgrade_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private void RefreshCurrentClass()
+        {
+            if (comboBox1.SelectedItem == null) return;
+            string grade = comboBox1.SelectedItem.ToString().Trim();
+            using (SqlConnection c = new SqlConnection(connection))
+            {
+                c.Open();
+                string q = "SELECT Student_ID, Name, Age, Gender, Grade_Level FROM Students WHERE Grade_Level = @Class";
+                using (SqlCommand cmd = new SqlCommand(q, c))
+                {
+                    cmd.Parameters.AddWithValue("@Class", grade);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+         
+           }
+        }
+        private void ClearInputs()
+        {
+            s_id.Text = "";
+            s_name.Text = "";
+            s_age.Text = "";
+            s_gender.Text = "";
+            sgrade.SelectedItem = null;
+            searchbox.Text = "";
+            // if you want to deselect any current row:
+            dataGridView1.ClearSelection();
         }
     }
 }

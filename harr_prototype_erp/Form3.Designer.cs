@@ -73,12 +73,15 @@
             this.datagrid_student = new System.Windows.Forms.DataGridView();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mathematicsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gradeLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mathematicsScoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.socialScienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.computerScienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.englishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socialScienceScoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.computerScienceScoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.englishScoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urduScoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.year2024BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.harr_projectDataSet = new harr_prototype_erp.Harr_projectDataSet();
             this.year2024BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dMPSchoolDataSet11 = new harr_prototype_erp.DMPSchoolDataSet11();
             this.dMPSchoolDataSet9 = new harr_prototype_erp.DMPSchoolDataSet9();
@@ -92,6 +95,7 @@
             this.urdu = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.year2024TableAdapter1 = new harr_prototype_erp.Harr_projectDataSetTableAdapters.Year2024TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
@@ -106,6 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p_blue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_student)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.year2024BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.harr_projectDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.year2024BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet9)).BeginInit();
@@ -283,7 +289,7 @@
             this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label12.Location = new System.Drawing.Point(417, 1010);
+            this.label12.Location = new System.Drawing.Point(788, 993);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(423, 20);
             this.label12.TabIndex = 56;
@@ -295,7 +301,7 @@
             this.label11.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label11.Location = new System.Drawing.Point(330, 980);
+            this.label11.Location = new System.Drawing.Point(701, 963);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(683, 20);
             this.label11.TabIndex = 55;
@@ -305,7 +311,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox5.Location = new System.Drawing.Point(-87, 957);
+            this.pictureBox5.Location = new System.Drawing.Point(-20, 935);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(2038, 94);
             this.pictureBox5.TabIndex = 54;
@@ -357,7 +363,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(-14, 218);
+            this.pictureBox9.Location = new System.Drawing.Point(-20, 218);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(593, 74);
             this.pictureBox9.TabIndex = 66;
@@ -522,13 +528,14 @@
             this.datagrid_student.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.studentIDDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.mathematicsDataGridViewTextBoxColumn,
+            this.gradeLevelDataGridViewTextBoxColumn,
+            this.mathematicsScoreDataGridViewTextBoxColumn,
             this.scienceDataGridViewTextBoxColumn,
-            this.socialScienceDataGridViewTextBoxColumn,
-            this.computerScienceDataGridViewTextBoxColumn,
-            this.englishDataGridViewTextBoxColumn,
-            this.urduDataGridViewTextBoxColumn});
-            this.datagrid_student.DataSource = this.year2024BindingSource;
+            this.socialScienceScoreDataGridViewTextBoxColumn,
+            this.computerScienceScoreDataGridViewTextBoxColumn,
+            this.englishScoreDataGridViewTextBoxColumn,
+            this.urduScoreDataGridViewTextBoxColumn});
+            this.datagrid_student.DataSource = this.year2024BindingSource1;
             this.datagrid_student.Location = new System.Drawing.Point(126, 327);
             this.datagrid_student.Name = "datagrid_student";
             this.datagrid_student.Size = new System.Drawing.Size(845, 524);
@@ -547,11 +554,17 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // mathematicsDataGridViewTextBoxColumn
+            // gradeLevelDataGridViewTextBoxColumn
             // 
-            this.mathematicsDataGridViewTextBoxColumn.DataPropertyName = "Mathematics";
-            this.mathematicsDataGridViewTextBoxColumn.HeaderText = "Mathematics";
-            this.mathematicsDataGridViewTextBoxColumn.Name = "mathematicsDataGridViewTextBoxColumn";
+            this.gradeLevelDataGridViewTextBoxColumn.DataPropertyName = "Grade_Level";
+            this.gradeLevelDataGridViewTextBoxColumn.HeaderText = "Grade_Level";
+            this.gradeLevelDataGridViewTextBoxColumn.Name = "gradeLevelDataGridViewTextBoxColumn";
+            // 
+            // mathematicsScoreDataGridViewTextBoxColumn
+            // 
+            this.mathematicsScoreDataGridViewTextBoxColumn.DataPropertyName = "Mathematics_Score";
+            this.mathematicsScoreDataGridViewTextBoxColumn.HeaderText = "Mathematics_Score";
+            this.mathematicsScoreDataGridViewTextBoxColumn.Name = "mathematicsScoreDataGridViewTextBoxColumn";
             // 
             // scienceDataGridViewTextBoxColumn
             // 
@@ -559,29 +572,39 @@
             this.scienceDataGridViewTextBoxColumn.HeaderText = "Science";
             this.scienceDataGridViewTextBoxColumn.Name = "scienceDataGridViewTextBoxColumn";
             // 
-            // socialScienceDataGridViewTextBoxColumn
+            // socialScienceScoreDataGridViewTextBoxColumn
             // 
-            this.socialScienceDataGridViewTextBoxColumn.DataPropertyName = "Social_Science";
-            this.socialScienceDataGridViewTextBoxColumn.HeaderText = "Social_Science";
-            this.socialScienceDataGridViewTextBoxColumn.Name = "socialScienceDataGridViewTextBoxColumn";
+            this.socialScienceScoreDataGridViewTextBoxColumn.DataPropertyName = "Social_Science_Score";
+            this.socialScienceScoreDataGridViewTextBoxColumn.HeaderText = "Social_Science_Score";
+            this.socialScienceScoreDataGridViewTextBoxColumn.Name = "socialScienceScoreDataGridViewTextBoxColumn";
             // 
-            // computerScienceDataGridViewTextBoxColumn
+            // computerScienceScoreDataGridViewTextBoxColumn
             // 
-            this.computerScienceDataGridViewTextBoxColumn.DataPropertyName = "Computer_Science";
-            this.computerScienceDataGridViewTextBoxColumn.HeaderText = "Computer_Science";
-            this.computerScienceDataGridViewTextBoxColumn.Name = "computerScienceDataGridViewTextBoxColumn";
+            this.computerScienceScoreDataGridViewTextBoxColumn.DataPropertyName = "Computer_Science_Score";
+            this.computerScienceScoreDataGridViewTextBoxColumn.HeaderText = "Computer_Science_Score";
+            this.computerScienceScoreDataGridViewTextBoxColumn.Name = "computerScienceScoreDataGridViewTextBoxColumn";
             // 
-            // englishDataGridViewTextBoxColumn
+            // englishScoreDataGridViewTextBoxColumn
             // 
-            this.englishDataGridViewTextBoxColumn.DataPropertyName = "English";
-            this.englishDataGridViewTextBoxColumn.HeaderText = "English";
-            this.englishDataGridViewTextBoxColumn.Name = "englishDataGridViewTextBoxColumn";
+            this.englishScoreDataGridViewTextBoxColumn.DataPropertyName = "English_Score";
+            this.englishScoreDataGridViewTextBoxColumn.HeaderText = "English_Score";
+            this.englishScoreDataGridViewTextBoxColumn.Name = "englishScoreDataGridViewTextBoxColumn";
             // 
-            // urduDataGridViewTextBoxColumn
+            // urduScoreDataGridViewTextBoxColumn
             // 
-            this.urduDataGridViewTextBoxColumn.DataPropertyName = "Urdu";
-            this.urduDataGridViewTextBoxColumn.HeaderText = "Urdu";
-            this.urduDataGridViewTextBoxColumn.Name = "urduDataGridViewTextBoxColumn";
+            this.urduScoreDataGridViewTextBoxColumn.DataPropertyName = "Urdu_Score";
+            this.urduScoreDataGridViewTextBoxColumn.HeaderText = "Urdu_Score";
+            this.urduScoreDataGridViewTextBoxColumn.Name = "urduScoreDataGridViewTextBoxColumn";
+            // 
+            // year2024BindingSource1
+            // 
+            this.year2024BindingSource1.DataMember = "Year2024";
+            this.year2024BindingSource1.DataSource = this.harr_projectDataSet;
+            // 
+            // harr_projectDataSet
+            // 
+            this.harr_projectDataSet.DataSetName = "Harr_projectDataSet";
+            this.harr_projectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // year2024BindingSource
             // 
@@ -649,9 +672,8 @@
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.Location = new System.Drawing.Point(1267, 383);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(22, 31);
+            this.name.Size = new System.Drawing.Size(0, 31);
             this.name.TabIndex = 83;
-            this.name.Text = ".";
             // 
             // button3
             // 
@@ -665,6 +687,10 @@
             this.button3.Text = "View";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // year2024TableAdapter1
+            // 
+            this.year2024TableAdapter1.ClearBeforeFill = true;
             // 
             // Form3
             // 
@@ -729,6 +755,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p_blue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_student)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.year2024BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.harr_projectDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.year2024BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dMPSchoolDataSet9)).EndInit();
@@ -785,14 +813,6 @@
         private DMPSchoolDataSet9 dMPSchoolDataSet9;
         private System.Windows.Forms.BindingSource year2022BindingSource;
         private DMPSchoolDataSet9TableAdapters.Year2022TableAdapter year2022TableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mathematicsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scienceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn socialScienceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn computerScienceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn englishDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn urduDataGridViewTextBoxColumn;
         private DMPSchoolDataSet10 dMPSchoolDataSet10;
         private System.Windows.Forms.BindingSource year2023BindingSource;
         private DMPSchoolDataSet10TableAdapters.Year2023TableAdapter year2023TableAdapter;
@@ -803,5 +823,17 @@
         private System.Windows.Forms.TextBox urdu;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Button button3;
+        private Harr_projectDataSet harr_projectDataSet;
+        private System.Windows.Forms.BindingSource year2024BindingSource1;
+        private Harr_projectDataSetTableAdapters.Year2024TableAdapter year2024TableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gradeLevelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mathematicsScoreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scienceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socialScienceScoreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn computerScienceScoreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn englishScoreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urduScoreDataGridViewTextBoxColumn;
     }
 }

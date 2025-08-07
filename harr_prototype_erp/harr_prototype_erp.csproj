@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -91,6 +94,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DMPSchoolDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMPSchoolDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMPSchoolDataSet17.xsd</DependentUpon>
     </Compile>
     <Compile Include="DMPSchoolDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -180,6 +188,11 @@
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Harr_projectDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Harr_projectDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -216,6 +229,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="DMPSchoolDataSet.xsc">
       <DependentUpon>DMPSchoolDataSet.xsd</DependentUpon>
     </None>
@@ -315,6 +329,17 @@
     <None Include="DMPSchoolDataSet16.xss">
       <DependentUpon>DMPSchoolDataSet16.xsd</DependentUpon>
     </None>
+    <None Include="DMPSchoolDataSet17.xsc">
+      <DependentUpon>DMPSchoolDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="DMPSchoolDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DMPSchoolDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DMPSchoolDataSet17.xss">
+      <DependentUpon>DMPSchoolDataSet17.xsd</DependentUpon>
+    </None>
     <None Include="DMPSchoolDataSet2.xsc">
       <DependentUpon>DMPSchoolDataSet2.xsd</DependentUpon>
     </None>
@@ -402,6 +427,17 @@
     </None>
     <None Include="DMPSchoolDataSet9.xss">
       <DependentUpon>DMPSchoolDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Harr_projectDataSet.xsc">
+      <DependentUpon>Harr_projectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Harr_projectDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Harr_projectDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Harr_projectDataSet.xss">
+      <DependentUpon>Harr_projectDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

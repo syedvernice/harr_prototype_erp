@@ -20,6 +20,7 @@ namespace harr_prototype_erp
         public Form1()
         {
             InitializeComponent();
+            textBox2.UseSystemPasswordChar = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -79,7 +80,8 @@ namespace harr_prototype_erp
 
                 else if (user != "" && password != "")
                 {
-                    string connection = @"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+                    //  string connection = @"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+                    string connection = @"Data Source=LAPTOP-PLH51RCN\SQLEXPRESS;Initial Catalog=Harr_project;Integrated Security=True;TrustServerCertificate=True;";
                     using (SqlConnection conn = new SqlConnection(connection))
                     {
 
@@ -134,6 +136,16 @@ namespace harr_prototype_erp
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = !checkBox1.Checked;
         }
     }
 }

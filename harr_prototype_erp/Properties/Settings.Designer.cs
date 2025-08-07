@@ -33,5 +33,27 @@ namespace harr_prototype_erp.Properties {
                 return ((string)(this["DMPSchoolConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PLH51RCN\\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Secur" +
+            "ity=True;TrustServerCertificate=True")]
+        public string DMPSchoolConnectionString1 {
+            get {
+                return ((string)(this["DMPSchoolConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PLH51RCN\\SQLEXPRESS;Initial Catalog=Harr_project;Integrated Se" +
+            "curity=True;TrustServerCertificate=True")]
+        public string Harr_projectConnectionString {
+            get {
+                return ((string)(this["Harr_projectConnectionString"]));
+            }
+        }
     }
 }

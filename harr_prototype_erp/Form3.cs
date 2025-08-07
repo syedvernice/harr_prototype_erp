@@ -15,12 +15,49 @@ namespace harr_prototype_erp
 {
     public partial class Form3 : Form
     {
-        string connection = @"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        public string TeacherClass = "";
+        public string TeacherID = "";
+       
+        string connection = @"Data Source=LAPTOP-PLH51RCN\SQLEXPRESS;Initial Catalog=Harr_project;Integrated Security=True";
 
         public Form3()
         {
             InitializeComponent();
+            this.Load += Form3_Load;
 
+        }
+        private void LoadStudentsOfClass()
+        {
+            if (string.IsNullOrWhiteSpace(TeacherClass)) return;
+
+            string filterClass = TeacherClass.Trim(); // e.g., "9" or "9th"
+
+            // Always use the selected year (default is set to "2024")
+            string year = comboyear.SelectedItem?.ToString() ?? "2024";
+            string yearTable = "Year" + year; // e.g., Year2024
+
+            // Simple query with implicit join to get student info + marks
+            string query = $@"
+        SELECT s.Student_ID, s.Name, s.Age, s.Gender, s.Grade_Level,
+               y.Mathematics_score, y.Science, y.Social_Science_Score,
+               y.Computer_Science_Score, y.English_Score, y.Urdu_Score
+        FROM Students s, {yearTable} y
+        WHERE s.Student_ID = y.Student_ID
+          AND s.Grade_Level = @Class
+    ";
+
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Class", filterClass);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    datagrid_student.DataSource = dt;
+                }
+            }
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -112,33 +149,37 @@ namespace harr_prototype_erp
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            this.dMPSchoolDataSet11.EnforceConstraints = false;
-            this.year2024TableAdapter.Fill(this.dMPSchoolDataSet11.Year2024);
 
-            this.dMPSchoolDataSet10.EnforceConstraints = false;
-            this.year2023TableAdapter.Fill(this.dMPSchoolDataSet10.Year2023);
+            //MessageBox.Show("TeacherClass is: [" + TeacherClass + "]");
 
-            this.dMPSchoolDataSet9.EnforceConstraints = false;
-            this.year2022TableAdapter.Fill(this.dMPSchoolDataSet9.Year2022);
+            this.year2024TableAdapter1.Fill(this.harr_projectDataSet.Year2024);
 
+
+            // year selector setup
             comboyear.SelectedIndexChanged += ComboYear_SelectedIndexChanged;
             comboyear.SelectedItem = "2024";
+
+            // load only students of the teacher's class passed from Form8
+            LoadStudentsOfClass();
+
+
 
         }
         private void ComboYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboyear.SelectedItem != null)
-            {
-                string selectedYear = comboyear.SelectedItem.ToString();
-                LoadYearData(selectedYear);
-            }
+            //if (comboyear.SelectedItem != null)
+            //{
+            //    string selectedYear = comboyear.SelectedItem.ToString();
+            //   LoadYearData(selectedYear);
+            //}
+            LoadStudentsOfClass();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form8 f8 = new Form8();
+            Form8 f8 = new Form8(TeacherID);
             f8.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -188,14 +229,14 @@ namespace harr_prototype_erp
                 }
             }
 
-            MessageBox.Show("Teacher not found.");
+            MessageBox.Show("Student not found.");
         }
         private void LoadYearData(string year)
         {
-            string connection = @"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-            string tableName = $"[Year{year}]";  
-            string query = $"SELECT * FROM {tableName}";
-            
+            string connection = @"Data Source=LAPTOP-PLH51RCN\SQLEXPRESS;Initial Catalog=Harr_project;Integrated Security=True";
+            string tableName = $"[Year{year}]";
+            string query = $"SELECT * FROM {tableName} where Grade_Level=10";
+
 
             using (SqlConnection conn = new SqlConnection(connection))
             {
@@ -206,10 +247,10 @@ namespace harr_prototype_erp
             }
 
         }
-
+        //edit
         private void button7_Click(object sender, EventArgs e)
         {
-            name.Text= datagrid_student.CurrentRow.Cells[1].Value.ToString();
+            name.Text = datagrid_student.CurrentRow.Cells[1].Value.ToString();
             maths.Text = datagrid_student.CurrentRow.Cells[2].Value.ToString();
             science.Text = datagrid_student.CurrentRow.Cells[3].Value.ToString();
             sst.Text = datagrid_student.CurrentRow.Cells[4].Value.ToString();
@@ -217,7 +258,7 @@ namespace harr_prototype_erp
             english.Text = datagrid_student.CurrentRow.Cells[6].Value.ToString();
             urdu.Text = datagrid_student.CurrentRow.Cells[7].Value.ToString();
         }
-
+        //update
         private void button9_Click(object sender, EventArgs e)
         {
             if (maths.Text == "" || science.Text == "" || sst.Text == "" || computer.Text == "" || english.Text == "" || urdu.Text == "")
@@ -230,7 +271,7 @@ namespace harr_prototype_erp
 
 
 
-                string query = "update  Year2024 set Mathematics=@maths,Science=@science ,Social_Science=@sst,Computer_Science=@computer,English=@english,Urdu=@urdu where Student_ID=@id";
+                string query = "update  Year2024 set Mathematics_score=@maths,Science=@science ,Social_Science_Score=@sst,Computer_Science_Score=@computer,English_Score=@english,Urdu_Score=@urdu where Student_ID=@id";
                 SqlConnection conn = new SqlConnection(connection);
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -245,26 +286,31 @@ namespace harr_prototype_erp
                 cmd.Parameters.AddWithValue("@urdu", urdu.Text);
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Teacher Edited Successfully! ");
+                MessageBox.Show("Student Edited Successfully! ");
                 conn.Close();
                 button3.PerformClick();
+                ClearInputs();
 
             }
         }
 
+
+        // view
         private void button3_Click(object sender, EventArgs e)
         {
-            string query = "select * from Year2024";
-            SqlConnection conn = new SqlConnection(connection);
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            datagrid_student.DataSource = dt;
+            //string query = "select * from Year2024";
+            //SqlConnection conn = new SqlConnection(connection);
+            //SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            //DataTable dt = new DataTable();
+            //adapter.Fill(dt);
+            //datagrid_student.DataSource = dt;
+            LoadStudentsOfClass();
         }
 
         private void comboyear_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (comboyear.SelectedItem != "2024"){
+            if (comboyear.SelectedItem != "2024")
+            {
                 b_edit.Enabled = false;
                 b_update.Enabled = false;
                 p_blue.Enabled = false;
@@ -292,6 +338,19 @@ namespace harr_prototype_erp
         private void datagrid_student_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        private void ClearInputs()
+        {
+            name.Text = "";
+            maths.Text = "";
+            science.Text = "";
+            sst.Text = "";
+            computer.Text = "";
+            english.Text = "";
+            urdu.Text = "";
+
+            datagrid_student.ClearSelection(); // Optional: unselect any selected student row
+            name.Focus();
         }
     }
 }

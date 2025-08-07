@@ -251,9 +251,8 @@
             this.l_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_name.Location = new System.Drawing.Point(1175, 490);
             this.l_name.Name = "l_name";
-            this.l_name.Size = new System.Drawing.Size(22, 31);
+            this.l_name.Size = new System.Drawing.Size(0, 31);
             this.l_name.TabIndex = 142;
-            this.l_name.Text = ".";
             this.l_name.Click += new System.EventHandler(this.l_name_Click);
             // 
             // l_mail
@@ -262,9 +261,8 @@
             this.l_mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_mail.Location = new System.Drawing.Point(1130, 623);
             this.l_mail.Name = "l_mail";
-            this.l_mail.Size = new System.Drawing.Size(22, 31);
+            this.l_mail.Size = new System.Drawing.Size(0, 31);
             this.l_mail.TabIndex = 143;
-            this.l_mail.Text = ".";
             this.l_mail.Click += new System.EventHandler(this.label18_Click);
             // 
             // l_class
@@ -273,9 +271,8 @@
             this.l_class.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_class.Location = new System.Drawing.Point(1175, 560);
             this.l_class.Name = "l_class";
-            this.l_class.Size = new System.Drawing.Size(22, 31);
+            this.l_class.Size = new System.Drawing.Size(0, 31);
             this.l_class.TabIndex = 144;
-            this.l_class.Text = ".";
             // 
             // l_phone
             // 
@@ -283,9 +280,8 @@
             this.l_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l_phone.Location = new System.Drawing.Point(1175, 692);
             this.l_phone.Name = "l_phone";
-            this.l_phone.Size = new System.Drawing.Size(22, 31);
+            this.l_phone.Size = new System.Drawing.Size(0, 31);
             this.l_phone.TabIndex = 145;
-            this.l_phone.Text = ".";
             this.l_phone.Click += new System.EventHandler(this.label20_Click);
             // 
             // label1
@@ -421,7 +417,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(245, 785);
+            this.button3.Location = new System.Drawing.Point(226, 785);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(358, 41);
             this.button3.TabIndex = 160;

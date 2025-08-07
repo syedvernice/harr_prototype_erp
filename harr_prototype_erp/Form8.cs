@@ -14,7 +14,7 @@ namespace harr_prototype_erp
     public partial class Form8 : Form
     {
         private string _teacherID = null;
-        string connection = @"Data Source=SYEDVERNICE-9SL\SQLEXPRESS;Initial Catalog=DMPSchool;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string connection = @"Data Source=LAPTOP-PLH51RCN\SQLEXPRESS;Initial Catalog=Harr_project;Integrated Security=True;Encrypt=False";
         
         public Form8(string teacher_ID)
         {
@@ -90,6 +90,8 @@ namespace harr_prototype_erp
         private void button3_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3();
+            f3.TeacherClass = l_class.Text; // pass the class to Form3
+            f3.TeacherID = _teacherID;
             f3.Show();
         }
 
