@@ -63,6 +63,7 @@ namespace harr_prototype_erp
                     conn.Open();
 
                     // 1. Insert into overall Students table
+                    // update try
                     string insertOverall = @"
                 INSERT INTO Students (Student_ID, Name, Age, Gender, Grade_Level)
                 VALUES (@id, @name, @age, @gender, @grade)";
